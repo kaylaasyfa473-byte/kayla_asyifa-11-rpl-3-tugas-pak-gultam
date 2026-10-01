@@ -1,0 +1,1809 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #f4c8d8;
+    --pink-dark: #d88da9;
+    --pink-light: #fff0f5;
+
+    --lilac: #ddd0ee;
+    --mint: #d5eadf;
+    --cream: #fff4e8;
+
+    --text: #5e4d58;
+    --soft-text: #9b8792;
+
+    --white: #ffffff;
+
+    --shadow: 0 20px 50px rgba(110, 75, 95, 0.12);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(circle at 10% 10%, #ffe8f0 0, transparent 25%),
+        radial-gradient(circle at 90% 20%, #eee5fa 0, transparent 25%),
+        radial-gradient(circle at 20% 90%, #e6f4ed 0, transparent 25%),
+        #fffafd;
+}
+
+
+/* =========================
+   PAGE SYSTEM
+========================= */
+
+.page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.page.active {
+    display: flex;
+}
+
+
+/* =========================
+   FLOATING DECORATION
+========================= */
+
+.floating-decoration {
+    position: fixed;
+    z-index: 0;
+    color: #e8b5c8;
+    font-size: 25px;
+    animation: floatDecoration 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.decoration-1 {
+    left: 6%;
+    top: 20%;
+}
+
+.decoration-2 {
+    right: 8%;
+    top: 18%;
+    animation-delay: 1s;
+}
+
+.decoration-3 {
+    left: 10%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.decoration-4 {
+    right: 12%;
+    bottom: 20%;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatDecoration {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.small-title {
+    color: var(--pink-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button {
+    width: 100%;
+    padding: 15px 22px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #efb6cb,
+        #dca2bd
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 25px rgba(216, 141, 169, 0.25);
+
+    transition: 0.25s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 16px 30px rgba(216, 141, 169, 0.3);
+}
+
+.main-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+#loginPage,
+#voucherPage,
+#quantityPage {
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.login-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(430px, 100%);
+
+    padding: 48px 40px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+.logo-cloud {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 18px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--pink-light);
+
+    font-size: 38px;
+
+    animation: cloudBounce 3s ease-in-out infinite;
+}
+
+@keyframes cloudBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.login-card h1 {
+    margin-top: 7px;
+
+    font-size: 46px;
+
+    color: var(--text);
+}
+
+.login-card h1 span {
+    display: block;
+    color: var(--pink-dark);
+}
+
+.tagline {
+    margin-top: 8px;
+
+    color: var(--soft-text);
+    font-size: 13px;
+}
+
+.login-form {
+    margin-top: 35px;
+    text-align: left;
+}
+
+.login-form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.login-form input {
+    width: 100%;
+
+    padding: 15px 17px;
+
+    border: 1px solid #ecdce3;
+    border-radius: 16px;
+
+    outline: none;
+
+    color: var(--text);
+    background: #fffafd;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.login-form input:focus {
+    border-color: var(--pink-dark);
+
+    box-shadow:
+        0 0 0 4px rgba(216, 141, 169, 0.1);
+}
+
+.login-form .main-button {
+    margin-top: 14px;
+}
+
+.login-note {
+    margin-top: 22px;
+
+    color: var(--soft-text);
+    font-size: 11px;
+}
+
+
+/* =========================
+   VOUCHER
+========================= */
+
+.voucher-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(480px, 100%);
+
+    padding: 45px 40px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+.voucher-cloud {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.voucher-card h1 {
+    margin-top: 8px;
+    font-size: 34px;
+}
+
+.discount-notice {
+    margin: 22px 0;
+
+    padding: 16px;
+
+    border-radius: 17px;
+
+    background: var(--pink-light);
+
+    color: #916275;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.voucher-label {
+    margin-top: 22px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--soft-text);
+}
+
+.voucher-code {
+    margin: 10px 0;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: #fff4f7;
+
+    border: 1px dashed var(--pink-dark);
+
+    color: var(--pink-dark);
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.voucher-small {
+    margin-bottom: 25px;
+
+    color: var(--soft-text);
+    font-size: 11px;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 6%;
+
+    background: rgba(255, 250, 253, 0.85);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(220, 190, 205, 0.2);
+}
+
+.brand {
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.brand span {
+    color: var(--pink-dark);
+}
+
+.customer-badge,
+.designer-badge {
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    box-shadow: 0 6px 20px rgba(110, 75, 95, 0.08);
+
+    color: var(--soft-text);
+
+    font-size: 12px;
+}
+
+.customer-badge span {
+    color: var(--pink-dark);
+    font-weight: 700;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+#menuPage {
+    flex-direction: column;
+}
+
+.menu-container {
+    width: min(1100px, 90%);
+    margin: auto;
+    padding: 60px 0;
+}
+
+.page-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.page-heading h1 {
+    margin-top: 8px;
+
+    font-size: clamp(34px, 5vw, 52px);
+}
+
+.page-heading h1 span {
+    color: var(--pink-dark);
+}
+
+.page-heading > p:last-child {
+    margin-top: 10px;
+
+    color: var(--soft-text);
+    font-size: 14px;
+}
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.cake-card {
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border-radius: 27px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.3s ease;
+}
+
+.cake-card:hover {
+    transform: translateY(-7px);
+}
+
+.menu-cake {
+    height: 220px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 100px;
+
+    transition: 0.3s;
+}
+
+.cake-card:hover .menu-cake {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.pink-cake {
+    background: #fde4ec;
+}
+
+.lilac-cake {
+    background: #eee8f8;
+}
+
+.cream-cake {
+    background: #eaf5ef;
+}
+
+.cake-info {
+    padding: 23px;
+}
+
+.cake-tag {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #fff0f5;
+
+    color: var(--pink-dark);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.lilac-tag {
+    background: #f0ebfa;
+    color: #9b83bd;
+}
+
+.mint-tag {
+    background: #eaf6ef;
+    color: #7fa992;
+}
+
+.cake-info h2 {
+    margin-top: 12px;
+
+    font-size: 23px;
+}
+
+.cake-info p {
+    margin-top: 6px;
+
+    min-height: 40px;
+
+    color: var(--soft-text);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.cake-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 18px;
+}
+
+.cake-bottom strong {
+    color: var(--pink-dark);
+    font-size: 15px;
+}
+
+.cake-bottom button {
+    padding: 9px 13px;
+
+    border-radius: 12px;
+
+    background: var(--pink-light);
+
+    color: var(--pink-dark);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.cake-bottom button:hover {
+    background: var(--pink);
+    color: white;
+}
+
+
+/* =========================
+   CUSTOMIZER
+========================= */
+
+#customPage {
+    flex-direction: column;
+}
+
+.custom-container {
+    width: min(1150px, 92%);
+    margin: auto;
+    padding: 45px 0 60px;
+}
+
+.custom-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.custom-heading h1 {
+    margin-top: 7px;
+    font-size: 40px;
+}
+
+.custom-heading h1 span {
+    color: var(--pink-dark);
+}
+
+.custom-heading > p:last-child {
+    margin-top: 8px;
+
+    color: var(--soft-text);
+    font-size: 13px;
+}
+
+.custom-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(380px, 0.9fr)
+        minmax(450px, 1.1fr);
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview-card {
+    position: sticky;
+    top: 100px;
+
+    padding: 20px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    box-shadow: var(--shadow);
+}
+
+.preview-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px 5px 14px;
+
+    color: var(--pink-dark);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.cake-box {
+    position: relative;
+
+    min-height: 420px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 25px;
+
+    background: #f3c8d8;
+
+    transition: 0.4s;
+}
+
+.pack-icon {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    color: var(--pink-dark);
+}
+
+.cake-stage {
+    position: relative;
+
+    width: 280px;
+    height: 260px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   CAKE BASE
+========================= */
+
+.cake-base {
+    position: absolute;
+
+    left: 50%;
+    bottom: 35px;
+
+    transform: translateX(-50%);
+
+    width: 190px;
+    height: 115px;
+
+    border-radius: 18px 18px 30px 30px;
+
+    background: #f5dfc8;
+
+    box-shadow:
+        0 14px 0 rgba(120, 80, 80, 0.08);
+
+    transition: 0.4s;
+}
+
+.cake-base::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -25px;
+
+    transform: translateX(-50%);
+
+    width: 190px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: #fff6ef;
+
+    transition: 0.4s;
+}
+
+.cake-hole {
+    display: none;
+}
+
+
+/* DONUT */
+
+.cake-base.donut {
+    width: 185px;
+    height: 185px;
+
+    bottom: 28px;
+
+    border-radius: 50%;
+}
+
+.cake-base.donut::before {
+    display: none;
+}
+
+.cake-base.donut .cake-hole {
+    display: block;
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #f3c8d8;
+}
+
+
+/* DREAM CAKE */
+
+.cake-base.dream {
+    width: 155px;
+    height: 150px;
+
+    bottom: 35px;
+
+    border-radius: 12px;
+}
+
+.cake-base.dream::before {
+    width: 155px;
+}
+
+
+/* =========================
+   FONDANT
+========================= */
+
+.cake-fondant {
+    position: absolute;
+
+    left: 50%;
+    bottom: 120px;
+
+    transform: translateX(-50%);
+
+    width: 180px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #fff4ef;
+
+    opacity: 0.95;
+
+    transition: 0.4s;
+}
+
+
+/* =========================
+   CREAM
+========================= */
+
+.cake-cream {
+    position: absolute;
+
+    left: 50%;
+    bottom: 135px;
+
+    transform: translateX(-50%);
+
+    width: 150px;
+    height: 50px;
+
+    transition: 0.4s;
+}
+
+.cream-blob {
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 5px 8px rgba(120, 80, 90, 0.1);
+}
+
+.cream-blob:nth-child(1) {
+    left: 5px;
+    top: 13px;
+}
+
+.cream-blob:nth-child(2) {
+    left: 38px;
+    top: 3px;
+}
+
+.cream-blob:nth-child(3) {
+    left: 72px;
+    top: 10px;
+}
+
+.cream-blob:nth-child(4) {
+    left: 106px;
+    top: 4px;
+}
+
+.cream-none {
+    display: none;
+}
+
+.cream-cheese {
+    background: #fff1a8;
+}
+
+.cream-chocolate {
+    background: #9e6a57;
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.cake-decoration {
+    position: absolute;
+
+    left: 50%;
+    bottom: 158px;
+
+    transform: translateX(-50%);
+
+    width: 150px;
+    height: 50px;
+
+    pointer-events: none;
+}
+
+.sprinkle {
+    position: absolute;
+
+    width: 7px;
+    height: 18px;
+
+    border-radius: 5px;
+
+    background: #e58daa;
+
+    transform: rotate(25deg);
+}
+
+.sprinkle:nth-child(1) {
+    left: 15px;
+    top: 20px;
+}
+
+.sprinkle:nth-child(2) {
+    left: 45px;
+    top: 5px;
+    transform: rotate(-30deg);
+}
+
+.sprinkle:nth-child(3) {
+    left: 75px;
+    top: 19px;
+    transform: rotate(45deg);
+}
+
+.sprinkle:nth-child(4) {
+    left: 108px;
+    top: 4px;
+    transform: rotate(-15deg);
+}
+
+.sprinkle:nth-child(5) {
+    left: 130px;
+    top: 25px;
+    transform: rotate(30deg);
+}
+
+.pearl {
+    position: absolute;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow: 0 2px 5px rgba(100, 70, 80, 0.15);
+}
+
+.pearl:nth-child(1) {
+    left: 20px;
+    top: 20px;
+}
+
+.pearl:nth-child(2) {
+    left: 50px;
+    top: 5px;
+}
+
+.pearl:nth-child(3) {
+    left: 80px;
+    top: 18px;
+}
+
+.pearl:nth-child(4) {
+    left: 110px;
+    top: 7px;
+}
+
+.cherry {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #df7189;
+
+    box-shadow:
+        15px 4px 0 #e5879c;
+}
+
+.cherry::before {
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 20px;
+
+    border-left: 3px solid #78a279;
+
+    border-radius: 50%;
+
+    left: 9px;
+    top: -15px;
+
+    transform: rotate(25deg);
+}
+
+.preview-hint {
+    margin-bottom: 20px;
+
+    color: rgba(100, 75, 85, 0.6);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.live-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 5px 3px;
+
+    font-size: 12px;
+}
+
+.live-price span {
+    color: var(--soft-text);
+}
+
+.live-price strong {
+    color: var(--pink-dark);
+    font-size: 19px;
+}
+
+
+/* =========================
+   OPTIONS AREA
+========================= */
+
+.options-area {
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.selected-cake-name {
+    margin-bottom: 20px;
+}
+
+.selected-cake-name span {
+    color: var(--soft-text);
+    font-size: 11px;
+}
+
+.selected-cake-name h2 {
+    margin-top: 4px;
+    font-size: 26px;
+}
+
+
+/* =========================
+   OPTION
+========================= */
+
+.option-section {
+    padding: 17px 0;
+
+    border-bottom: 1px solid #f1e4e9;
+}
+
+.option-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 13px;
+}
+
+.option-title h3 {
+    font-size: 16px;
+}
+
+.option-title span {
+    color: var(--soft-text);
+    font-size: 10px;
+}
+
+
+/* =========================
+   ROUND TOPPING BUTTON
+========================= */
+
+.round-options {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 13px;
+}
+
+.round-option {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 1px solid #eee2e7;
+
+    color: var(--soft-text);
+
+    transition: 0.22s ease;
+}
+
+.round-option:hover {
+    transform: translateY(-4px);
+    border-color: var(--pink);
+}
+
+.round-option.selected {
+    border: 3px solid var(--pink-dark);
+
+    background: #fff5f8;
+
+    color: var(--pink-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 18px rgba(216, 141, 169, 0.18);
+}
+
+.option-icon {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 16px;
+}
+
+.round-option small {
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* option colors */
+
+.vanilla {
+    background: #fff5ec;
+}
+
+.chocolate {
+    background: #ead2c5;
+}
+
+.strawberry {
+    background: #f9d4df;
+}
+
+.matcha {
+    background: #dcebd9;
+}
+
+.fondant-white {
+    background: #f8f8f8;
+}
+
+.fondant-pink {
+    background: #f5d1dd;
+}
+
+.fondant-blue {
+    background: #dcd6ee;
+}
+
+.fondant-caramel {
+    background: #efd8b9;
+}
+
+.cream-white {
+    background: #f5f5f5;
+}
+
+.cream-yellow {
+    background: #fff0aa;
+}
+
+.cream-brown {
+    background: #d6a38f;
+}
+
+.cream-none {
+    background: #f3e9ed;
+    font-size: 18px;
+}
+
+.decor-none {
+    background: #f7edf2;
+}
+
+.decor-sprinkle {
+    background: #f9d5df;
+}
+
+.decor-pearl {
+    background: #f2f2f2;
+}
+
+.decor-cherry {
+    background: #f7d0da;
+}
+
+.pack-pink,
+.pack-lilac,
+.pack-cream,
+.pack-mint {
+    border: 2px solid rgba(100, 75, 90, 0.08);
+}
+
+.pack-pink {
+    background: #f3c8d8;
+}
+
+.pack-lilac {
+    background: #d9c7ed;
+}
+
+.pack-cream {
+    background: #f5dfc5;
+}
+
+.pack-mint {
+    background: #c9e4d4;
+}
+
+
+/* =========================
+   QUANTITY
+========================= */
+
+.quantity-box {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 17px;
+
+    background: #fff5f8;
+}
+
+.quantity-box strong {
+    display: block;
+    font-size: 13px;
+}
+
+.quantity-box small {
+    color: var(--soft-text);
+    font-size: 9px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-control button {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--pink-dark);
+
+    font-size: 19px;
+
+    box-shadow: 0 4px 10px rgba(100, 70, 80, 0.08);
+}
+
+.quantity-control span {
+    min-width: 18px;
+
+    text-align: center;
+
+    font-weight: 800;
+}
+
+.add-button {
+    margin-top: 15px;
+}
+
+
+/* =========================
+   CHOICE PAGE
+========================= */
+
+.choice-card {
+    width: min(540px, 100%);
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow);
+}
+
+.choice-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 18px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--pink-light);
+
+    font-size: 36px;
+}
+
+.choice-card h1 {
+    margin-top: 10px;
+
+    font-size: 32px;
+}
+
+.choice-card > p:not(.small-title) {
+    margin-top: 12px;
+
+    color: var(--soft-text);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.choice-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 28px;
+}
+
+.choice-buttons button {
+    padding: 14px;
+
+    border-radius: 15px;
+
+    background: #fff5f8;
+
+    color: var(--pink-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.choice-buttons button:hover {
+    background: var(--pink);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.choice-buttons .secondary-choice {
+    background: #f4eff9;
+    color: #927caf;
+}
+
+.choice-buttons .finish-choice {
+    background: #eaf5ef;
+    color: #6e9c82;
+}
+
+
+/* =========================
+   RECEIPT
+========================= */
+
+#receiptPage {
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.receipt-card {
+    width: min(620px, 100%);
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.receipt-header {
+    text-align: center;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px dashed #e5d7de;
+}
+
+.receipt-logo {
+    font-size: 35px;
+}
+
+.receipt-header h1 {
+    margin-top: 5px;
+
+    font-size: 31px;
+}
+
+.receipt-header p:last-child {
+    margin-top: 5px;
+
+    color: var(--soft-text);
+
+    font-size: 11px;
+}
+
+.receipt-customer {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px dashed #e5d7de;
+}
+
+.receipt-customer div {
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background: #fff8fa;
+}
+
+.receipt-customer span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--soft-text);
+
+    font-size: 9px;
+}
+
+.receipt-customer strong {
+    font-size: 12px;
+}
+
+.receipt-discount-message {
+    margin: 18px 0;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: #fff0f5;
+
+    color: #916275;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+.receipt-items-title {
+    margin: 20px 0 12px;
+
+    color: var(--soft-text);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.receipt-item {
+    margin-bottom: 12px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background: #fffafd;
+
+    border: 1px solid #f1e6eb;
+}
+
+.receipt-item-title {
+    margin-bottom: 10px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.receipt-detail {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 5px;
+
+    color: var(--soft-text);
+
+    font-size: 10px;
+}
+
+.receipt-item-total {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 12px;
+    padding-top: 10px;
+
+    border-top: 1px dashed #eadce2;
+
+    font-size: 11px;
+}
+
+.receipt-item-total strong {
+    color: var(--pink-dark);
+}
+
+.receipt-summary {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px dashed #e5d7de;
+}
+
+.receipt-summary > div {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px 0;
+
+    font-size: 12px;
+}
+
+.discount-text {
+    color: #78a48a;
+}
+
+.total-line {
+    margin-top: 17px !important;
+
+    padding-top: 17px;
+
+    border-top: 2px solid #f2dce5;
+
+    font-size: 17px !important;
+}
+
+.total-line strong {
+    color: var(--pink-dark);
+
+    font-size: 21px;
+}
+
+.tax-note {
+    margin-top: 14px;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+.receipt-actions {
+    display: grid;
+
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+.receipt-actions button {
+    padding: 14px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.receipt-actions button:hover {
+    transform: translateY(-2px);
+}
+
+.whatsapp-button {
+    background: #e5f4eb;
+    color: #5f9878;
+}
+
+.email-button {
+    background: #eee7f8;
+    color: #8971ac;
+}
+
+.again-button {
+    background: #fff0f5;
+    color: var(--pink-dark);
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translate(-50%, 100px);
+
+    z-index: 100;
+
+    padding: 12px 18px;
+
+    border-radius: 30px;
+
+    background: #5e4d58;
+
+    color: white;
+
+    font-size: 11px;
+
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .custom-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-card {
+        position: relative;
+        top: auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 15px 5%;
+    }
+
+    .customer-badge,
+    .designer-badge {
+        display: none;
+    }
+
+    .menu-container {
+        width: 90%;
+        padding: 40px 0;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-card,
+    .voucher-card,
+    .choice-card {
+        padding: 35px 25px;
+    }
+
+    .login-card h1 {
+        font-size: 38px;
+    }
+
+    .custom-container {
+        width: 92%;
+        padding-top: 35px;
+    }
+
+    .custom-heading h1 {
+        font-size: 32px;
+    }
+
+    .options-area {
+        padding: 18px;
+    }
+
+    .round-options {
+        gap: 9px;
+    }
+
+    .round-option {
+        width: 62px;
+        height: 62px;
+    }
+
+    .receipt-card {
+        padding: 25px 18px;
+    }
+
+    .receipt-customer {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweetie Cloud</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Dekorasi -->
+    <div class="floating-decoration decoration-1">♡</div>
+    <div class="floating-decoration decoration-2">✦</div>
+    <div class="floating-decoration decoration-3">♡</div>
+    <div class="floating-decoration decoration-4">✧</div>
+
+
+    <!-- =========================
+         LOGIN
+    ========================== -->
+    <section class="page active" id="loginPage">
+
+        <div class="login-card">
+
+            <div class="logo-cloud">☁️</div>
+
+            <p class="small-title">WELCOME TO</p>
+
+            <h1>
+                Sweetie
+                <span>Cloud</span>
+            </h1>
+
+            <p class="tagline">
+                Sweet little things, made just for you ♡
+            </p>
+
+            <div class="login-form">
+
+                <label>Nama kamu</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Masukkan nama kamu..."
+                    autocomplete="off"
+                >
+
+                <button class="main-button" onclick="loginCustomer()">
+                    Masuk ke Sweetie Cloud ✨
+                </button>
+
+            </div>
+
+            <p class="login-note">
+                🍰 Buat dan hias kue impianmu sendiri!
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VOUCHER
+    ========================== -->
+    <section class="page" id="voucherPage">
+
+        <div class="voucher-card">
+
+            <div class="voucher-cloud">☁️</div>
+
+            <p class="small-title">HELLO SWEETIE!</p>
+
+            <h1 id="welcomeName">
+                Welcome! 💗
+            </h1>
+
+            <div
+                class="discount-notice"
+                id="discountInfo">
+            </div>
+
+            <p class="voucher-label">
+                Voucher kamu
+            </p>
+
+            <div class="voucher-code" id="voucherText">
+                SWEETIE0000
+            </div>
+
+            <p class="voucher-small">
+                Simpan voucher ini untuk kunjungan berikutnya ♡
+            </p>
+
+            <button class="main-button" onclick="startShopping()">
+                Mulai Belanja 🍰
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+    <section class="page" id="menuPage">
+
+        <header class="topbar">
+
+            <div class="brand">
+                Sweetie <span>Cloud</span> ☁️
+            </div>
+
+            <div class="customer-badge">
+                Hi, <span id="menuCustomer">Sweetie</span> ♡
+            </div>
+
+        </header>
+
+
+        <div class="menu-container">
+
+            <div class="page-heading">
+
+                <p class="small-title">TODAY'S SWEET MENU</p>
+
+                <h1>
+                    Pick your little
+                    <span>sweetness</span> 🍰
+                </h1>
+
+                <p>
+                    Pilih kue yang ingin kamu hias sendiri!
+                </p>
+
+            </div>
+
+
+            <div class="menu-grid">
+
+
+                <!-- CAKE 1 -->
+                <div class="cake-card">
+
+                    <div class="menu-cake pink-cake">
+                        🧁
+                    </div>
+
+                    <div class="cake-info">
+
+                        <span class="cake-tag">
+                            BEST SELLER
+                        </span>
+
+                        <h2>
+                            Cloud Cupcake
+                        </h2>
+
+                        <p>
+                            Cupcake lembut dengan rasa manis yang cute.
+                        </p>
+
+                        <div class="cake-bottom">
+
+                            <strong>
+                                Rp18.000
+                            </strong>
+
+                            <button
+                                onclick="chooseCake('Cloud Cupcake', 18000, 'cupcake')">
+                                Pilih ✨
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE 2 -->
+                <div class="cake-card">
+
+                    <div class="menu-cake lilac-cake">
+                        🎂
+                    </div>
+
+                    <div class="cake-info">
+
+                        <span class="cake-tag lilac-tag">
+                            DREAMY
+                        </span>
+
+                        <h2>
+                            Dream Cake
+                        </h2>
+
+                        <p>
+                            Mini cake cantik untuk hari yang spesial.
+                        </p>
+
+                        <div class="cake-bottom">
+
+                            <strong>
+                                Rp25.000
+                            </strong>
+
+                            <button
+                                onclick="chooseCake('Dream Cake', 25000, 'cake')">
+                                Pilih ✨
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE 3 -->
+                <div class="cake-card">
+
+                    <div class="menu-cake cream-cake">
+                        🍩
+                    </div>
+
+                    <div class="cake-info">
+
+                        <span class="cake-tag mint-tag">
+                            SWEET
+                        </span>
+
+                        <h2>
+                            Sweet Donut
+                        </h2>
+
+                        <p>
+                            Donat fluffy yang bisa kamu dekorasi sendiri.
+                        </p>
+
+                        <div class="cake-bottom">
+
+                            <strong>
+                                Rp15.000
+                            </strong>
+
+                            <button
+                                onclick="chooseCake('Sweet Donut', 15000, 'donut')">
+                                Pilih ✨
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CUSTOMIZER
+    ========================== -->
+    <section class="page" id="customPage">
+
+        <header class="topbar">
+
+            <div
+                class="brand"
+                onclick="showPage('menuPage')">
+                ← Sweetie Cloud
+            </div>
+
+            <div class="designer-badge">
+                🎀 Cake Designer
+            </div>
+
+        </header>
+
+
+        <div class="custom-container">
+
+            <div class="custom-heading">
+
+                <p class="small-title">
+                    LET'S DECORATE!
+                </p>
+
+                <h1>
+                    Make your cake
+                    <span>your way</span> ♡
+                </h1>
+
+                <p>
+                    Klik pilihan kecil di bawah untuk menghias kuemu.
+                </p>
+
+            </div>
+
+
+            <div class="custom-layout">
+
+
+                <!-- =====================
+                     PREVIEW
+                ====================== -->
+                <div class="preview-area">
+
+                    <div class="preview-card">
+
+                        <div class="preview-top">
+
+                            <span>
+                                LIVE PREVIEW
+                            </span>
+
+                            <span>
+                                ✦
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="cake-box"
+                            id="cakeBox">
+
+                            <div
+                                class="pack-icon"
+                                id="packIcon">
+                                ♡
+                            </div>
+
+
+                            <div
+                                class="cake-stage"
+                                id="cakeStage">
+
+                                <div
+                                    class="cake-base"
+                                    id="cakeBase">
+
+                                    <div
+                                        class="cake-hole">
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    class="cake-fondant"
+                                    id="previewFondant">
+                                </div>
+
+
+                                <div
+                                    class="cake-cream"
+                                    id="previewCream">
+                                </div>
+
+
+                                <div
+                                    class="cake-decoration"
+                                    id="previewDecoration">
+                                </div>
+
+                            </div>
+
+
+                            <p class="preview-hint">
+                                ✨ Your sweet creation ✨
+                            </p>
+
+                        </div>
+
+
+                        <div class="live-price">
+
+                            <span>
+                                Harga sementara
+                            </span>
+
+                            <strong id="customizationTotal">
+                                Rp0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================
+                     OPTIONS
+                ====================== -->
+                <div class="options-area">
+
+                    <div class="selected-cake-name">
+
+                        <span>
+                            Kamu memilih
+                        </span>
+
+                        <h2 id="cakeName">
+                            Cloud Cupcake
+                        </h2>
+
+                    </div>
+
+
+                    <!-- BASE -->
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <h3>
+                                🍰 Base Cake
+                            </h3>
+
+                            <span>
+                                pilih rasa
+                            </span>
+
+                        </div>
+
+
+                        <div class="round-options">
+
+                            <button
+                                class="round-option selected"
+                                onclick="chooseBase('Vanilla', 0, this)"
+                                title="Vanilla">
+
+                                <span class="option-icon vanilla">
+                                    🤍
+                                </span>
+
+                                <small>
+                                    Vanilla
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseBase('Cokelat', 2000, this)"
+                                title="Cokelat">
+
+                                <span class="option-icon chocolate">
+                                    🍫
+                                </span>
+
+                                <small>
+                                    Cokelat
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseBase('Strawberry', 2500, this)"
+                                title="Strawberry">
+
+                                <span class="option-icon strawberry">
+                                    🍓
+                                </span>
+
+                                <small>
+                                    Berry
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseBase('Matcha', 2500, this)"
+                                title="Matcha">
+
+                                <span class="option-icon matcha">
+                                    🍵
+                                </span>
+
+                                <small>
+                                    Matcha
+                                </small>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FONDANT -->
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <h3>
+                                🍥 Fondant
+                            </h3>
+
+                            <span>
+                                lapisan
+                            </span>
+
+                        </div>
+
+
+                        <div class="round-options">
+
+                            <button
+                                class="round-option selected"
+                                onclick="chooseFondant('Vanilla', 0, this)"
+                                title="Vanilla">
+
+                                <span class="option-icon fondant-white">
+                                    🤍
+                                </span>
+
+                                <small>
+                                    Vanilla
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseFondant('Strawberry', 3000, this)"
+                                title="Strawberry">
+
+                                <span class="option-icon fondant-pink">
+                                    🌸
+                                </span>
+
+                                <small>
+                                    Berry
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseFondant('Blueberry', 3000, this)"
+                                title="Blueberry">
+
+                                <span class="option-icon fondant-blue">
+                                    🫐
+                                </span>
+
+                                <small>
+                                    Blue
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseFondant('Caramel', 3000, this)"
+                                title="Caramel">
+
+                                <span class="option-icon fondant-caramel">
+                                    🍯
+                                </span>
+
+                                <small>
+                                    Caramel
+                                </small>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CREAM -->
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <h3>
+                                ☁️ Cream
+                            </h3>
+
+                            <span>
+                                topping
+                            </span>
+
+                        </div>
+
+
+                        <div class="round-options">
+
+                            <button
+                                class="round-option selected"
+                                onclick="chooseCream('Whipped Cream', 4000, 'whipped', this)"
+                                title="Whipped Cream">
+
+                                <span class="option-icon cream-white">
+                                    ☁️
+                                </span>
+
+                                <small>
+                                    Whipped
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseCream('Cheese Cream', 5000, 'cheese', this)"
+                                title="Cheese Cream">
+
+                                <span class="option-icon cream-yellow">
+                                    🧀
+                                </span>
+
+                                <small>
+                                    Cheese
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseCream('Chocolate Cream', 4500, 'chocolate', this)"
+                                title="Chocolate Cream">
+
+                                <span class="option-icon cream-brown">
+                                    🍫
+                                </span>
+
+                                <small>
+                                    Choco
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseCream('Tanpa Cream', 0, 'none', this)"
+                                title="Tanpa Cream">
+
+                                <span class="option-icon cream-none">
+                                    ×
+                                </span>
+
+                                <small>
+                                    None
+                                </small>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DECORATION -->
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <h3>
+                                ✨ Decoration
+                            </h3>
+
+                            <span>
+                                hiasan
+                            </span>
+
+                        </div>
+
+
+                        <div class="round-options">
+
+                            <button
+                                class="round-option selected"
+                                onclick="chooseDecoration('Tanpa Hiasan', 0, 'none', this)"
+                                title="Tanpa Hiasan">
+
+                                <span class="option-icon decor-none">
+                                    ♡
+                                </span>
+
+                                <small>
+                                    None
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseDecoration('Sprinkle', 2000, 'sprinkle', this)"
+                                title="Sprinkle">
+
+                                <span class="option-icon decor-sprinkle">
+                                    ✦
+                                </span>
+
+                                <small>
+                                    Sprinkle
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseDecoration('Pearl Sugar', 2500, 'pearl', this)"
+                                title="Pearl Sugar">
+
+                                <span class="option-icon decor-pearl">
+                                    •••
+                                </span>
+
+                                <small>
+                                    Pearl
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="chooseDecoration('Cherry', 3000, 'cherry', this)"
+                                title="Cherry">
+
+                                <span class="option-icon decor-cherry">
+                                    🍒
+                                </span>
+
+                                <small>
+                                    Cherry
+                                </small>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PACKAGING -->
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <h3>
+                                🎁 Packaging
+                            </h3>
+
+                            <span>
+                                warna box
+                            </span>
+
+                        </div>
+
+
+                        <div class="round-options">
+
+                            <button
+                                class="round-option selected"
+                                onclick="choosePacking('Pink', 3000, this)"
+                                title="Pink">
+
+                                <span class="option-icon pack-pink">
+                                </span>
+
+                                <small>
+                                    Pink
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="choosePacking('Lilac', 3000, this)"
+                                title="Lilac">
+
+                                <span class="option-icon pack-lilac">
+                                </span>
+
+                                <small>
+                                    Lilac
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="choosePacking('Cream', 2500, this)"
+                                title="Cream">
+
+                                <span class="option-icon pack-cream">
+                                </span>
+
+                                <small>
+                                    Cream
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="round-option"
+                                onclick="choosePacking('Mint', 3000, this)"
+                                title="Mint">
+
+                                <span class="option-icon pack-mint">
+                                </span>
+
+                                <small>
+                                    Mint
+                                </small>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUANTITY -->
+                    <div class="quantity-box">
+
+                        <div>
+                            <strong>
+                                Jumlah kue
+                            </strong>
+
+                            <small>
+                                Mau berapa?
+                            </small>
+                        </div>
+
+
+                        <div class="quantity-control">
+
+                            <button
+                                onclick="changeQuantity(-1)">
+                                −
+                            </button>
+
+                            <span id="quantityValue">
+                                1
+                            </span>
+
+                            <button
+                                onclick="changeQuantity(1)">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="main-button add-button"
+                        onclick="addCakeToOrder()">
+
+                        Tambahkan ke Pesanan 🍰
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUANTITY / CHOICE
+    ========================== -->
+    <section class="page" id="quantityPage">
+
+        <div class="choice-card">
+
+            <div class="choice-icon">
+                🎀
+            </div>
+
+            <p class="small-title">
+                CAKE CUSTOMIZATION
+            </p>
+
+            <h1 id="quantityMessage">
+                Mau topping yang sama?
+            </h1>
+
+            <p id="quantitySubmessage">
+                Kamu bisa membuat semua kue dengan desain yang sama atau membuat kue lainnya dengan topping berbeda.
+            </p>
+
+
+            <div
+                class="choice-buttons"
+                id="quantityChoiceButtons">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RECEIPT
+    ========================== -->
+    <section class="page" id="receiptPage">
+
+        <div class="receipt-card">
+
+            <div class="receipt-header">
+
+                <div class="receipt-logo">
+                    ☁️
+                </div>
+
+                <p class="small-title">
+                    SWEETIE CLOUD
+                </p>
+
+                <h1>
+                    Your Sweet Receipt
+                </h1>
+
+                <p>
+                    Thank you for choosing us ♡
+                </p>
+
+            </div>
+
+
+            <div class="receipt-customer">
+
+                <div>
+                    <span>
+                        Customer
+                    </span>
+
+                    <strong id="receiptCustomer">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>
+                        Voucher
+                    </span>
+
+                    <strong id="receiptVoucher">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div
+                class="receipt-discount-message"
+                id="receiptDiscountMessage">
+            </div>
+
+
+            <div class="receipt-items-title">
+                ORDER DETAILS
+            </div>
+
+
+            <div id="receiptItems">
+            </div>
+
+
+            <div class="receipt-summary">
+
+                <div>
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="receiptSubtotal">
+                        Rp0
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>
+                        Diskon pelanggan
+                    </span>
+
+                    <strong
+                        class="discount-text"
+                        id="receiptDiscount">
+                        Rp0
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>
+                        PPh 11% (simulasi)
+                    </span>
+
+                    <strong id="receiptTax">
+                        Rp0
+                    </strong>
+                </div>
+
+
+                <div class="total-line">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="receiptTotal">
+                        Rp0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <p class="tax-note">
+                * Pajak 11% di atas digunakan sebagai simulasi untuk kebutuhan project sekolah.
+            </p>
+
+
+            <div class="receipt-actions">
+
+                <button
+                    class="whatsapp-button"
+                    onclick="sendWhatsApp()">
+
+                    💬 Kirim ke WhatsApp
+
+                </button>
+
+
+                <button
+                    class="email-button"
+                    onclick="sendEmail()">
+
+                    💌 Kirim via Email
+
+                </button>
+
+
+                <button
+                    class="again-button"
+                    onclick="resetOrder()">
+
+                    🍰 Pesan Lagi
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Toast -->
+    <div
+        class="toast"
+        id="toast">
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
